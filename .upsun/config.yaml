@@ -63,7 +63,7 @@ applications:
     relationships:
         database: "database:postgresql"
         rediscache: "rediscache:redis"
-        #rabbitmqqueue: "rabbitmqqueue:rabbitmq"
+        rabbitmqqueue: "rabbitmqqueue:rabbitmq"
 
 # Services
 services:
@@ -73,8 +73,9 @@ services:
     rediscache:
         type: redis:7.2
     
-    #rabbitmqqueue:
-    #    type: rabbitmq:3.12
+    rabbitmqqueue:
+        type: rabbitmq:3.12
+        container_profile: HIGHER_MEMORY
 
 # Routes
 routes:

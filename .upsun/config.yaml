@@ -64,6 +64,7 @@ applications:
         rediscache: "rediscache:redis"
         rabbitmqqueue: "rabbitmqqueue:rabbitmq"
         database: "database:postgresql"
+        mysql:
 
 # Services
 services:
@@ -77,6 +78,8 @@ services:
     database:
         type: postgresql:16
 
+    mysql:
+        type: mariadb:11.4
 # Routes
 routes:
     "https://{all}/": { type: upstream, upstream: "app:http" }

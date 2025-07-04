@@ -80,6 +80,9 @@ services:
 
     mysql:
         type: mariadb:11.4
+
+    gotenberg:
+        type: gotenberg:8
 # Routes
 routes:
     "https://{all}/": { type: upstream, upstream: "app:http" }
